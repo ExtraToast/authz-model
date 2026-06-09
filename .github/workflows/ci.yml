@@ -69,7 +69,8 @@ jobs:
 
       - name: Lint GitHub Actions workflows
         shell: bash
-        run: "${{ steps.actionlint.outputs.executable }}" -color .github/workflows/*.yml
+        run: |
+          "${{ steps.actionlint.outputs.executable }}" -color .github/workflows/*.yml
 
   pipeline-complete:
     name: Pipeline Complete
